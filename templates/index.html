@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vegetable Market Price Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Vegetable Market Price Prediction </h1>
+    </header>
+    
+    <div class="container">
+        <div class="veg">
+            <img src="{{ url_for('static', filename='images/veg.png') }}" alt="Logo">
+        </div>
+        
+        <div class="form-container">
+            <form  action="/predict" method="POST" onsubmit="return showPrediction(event);" >
+                <label for="vegetables">Choose a Vegetable:</label>
+                <select name="vegetables" id="vegetables">
+                    <option value="Select">Select</option>
+                    <option value="beans">Beans</option>
+                    <option value="beetroot">Beetroot</option>
+                    <option value="bhindi">Bhindi</option>
+                    <option value="tomato">Tomato</option>
+                </select>
+                <button type="submit" id="predictButton">Predict</button>
+            </form>
+            
+        </div>
+    </div>
+    <!-- <div id="predictionResults" style="display: none;">
+        {{future_prices|safe}}
+    </div> -->
+    <!-- {% if future_prices %}
+    <div id="predictionResults" style="display: block;">
+        {{ future_prices|safe }}
+    </div>
+{% endif %} -->
+{% if df_html %}
+            <h2>Predictions for {{ selected_vegetable.title() }}</h2>
+            <div class="table-responsive mt-3">
+                {{ df_html|safe }} <!-- Render the HTML table -->
+            </div>
+        {% endif %}
+    <script>
+         function showPrediction(event) {
+                const vegetable = document.getElementById('vegetables').value;
+
+                if (vegetable === "Select") {
+                    alert("Please select a vegetable.");
+                    return false;  // Prevent form submission
+                }
+
+                return true;  // Allow form submission
+            }
+        
+    </script>
+
+</body>
+</html>

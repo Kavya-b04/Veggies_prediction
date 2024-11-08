@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+}
+
+.veg {
+    position: relative;
+    text-align: center;
+}
+
+.veg img {
+    width: 100%;
+    height: 50vh;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.veg h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    font-size: 2em;
+    border-radius: 8px;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+form select {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
